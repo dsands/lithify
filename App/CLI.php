@@ -64,10 +64,10 @@ class CLI
 
         // Get installed plugins from the plugins class
         $plugins = Plugins::getInstalledPlugins();
-        $wpackagist_plugins = Plugins::getWpackagistPlugins($plugins);
+        $wp_packages_plugins = Plugins::getWpPackagesPlugins($plugins);
         $other_plugins = Plugins::getOtherPlugins($plugins);
         $themes = Themes::getInstalledThemes();
-        $wpackagist_themes = Themes::getWpackagistThemes($themes);
+        $wp_packages_themes = Themes::getWpPackagesThemes($themes);
         $other_themes = Themes::getOtherThemes($themes);
         $mu_plugins = MuPlugins::getMuPlugins();
 
@@ -103,18 +103,18 @@ class CLI
         echo WP_CLI::colorize('├── 🔌 %yPlugins%n');
         WP_CLI::line('');
 
-        // Loop through the wpackagist plugins and show a line with its name and version
+        // Loop through the WP Packages plugins and show a line with its name and version
         // Composer plugins header
         echo WP_CLI::colorize('│    ├── 🐘 Plugins to be added with Composer');
         WP_CLI::line('');
-        // If the wpackagist plugins array is empty, show a message
-        if (empty($wpackagist_plugins)) {
+        // If the WP Packages plugins array is empty, show a message
+        if (empty($wp_packages_plugins)) {
             echo WP_CLI::colorize('│         └── %rNo plugins to add with Composer%n');
             WP_CLI::line('');
         } else {
-            foreach ($wpackagist_plugins as $plugin => $version) {
+            foreach ($wp_packages_plugins as $plugin => $version) {
 
-                echo WP_CLI::colorize('│    │    ' . $this->divider($wpackagist_plugins, $plugin) . ' %g' . $plugin . ' %b(' . $version . ')%n');
+                echo WP_CLI::colorize('│    │    ' . $this->divider($wp_packages_plugins, $plugin) . ' %g' . $plugin . ' %b(' . $version . ')%n');
                 WP_CLI::line('');
             }
         }
@@ -124,7 +124,7 @@ class CLI
         echo WP_CLI::colorize('│    ├── 🐙 Plugins to be added with Git');
         WP_CLI::line('');
         // If the other_plugins array is empty, show a message
-        if (empty($wpackagist_plugins)) {
+        if (empty($other_plugins)) {
             echo WP_CLI::colorize('│         └── %rNo plugins to add with Git%n');
             WP_CLI::line('');
         } else {
@@ -154,17 +154,17 @@ class CLI
         echo WP_CLI::colorize('└── 🎨 %yThemes%n');
         WP_CLI::line('');
 
-        // Loop through the wpackagist themes and show a line with its name and version
+        // Loop through the WP Packages themes and show a line with its name and version
         // Composer themes header
         echo WP_CLI::colorize('     ├── 🐘 Themes to be added with Composer');
         WP_CLI::line('');
-        // If the wpackagist themes array is empty, show a message
-        if (empty($wpackagist_themes)) {
+        // If the WP Packages themes array is empty, show a message
+        if (empty($wp_packages_themes)) {
             echo WP_CLI::colorize('         └── %rNo themes to add with Composer%n');
             WP_CLI::line('');
         } else {
-            foreach ($wpackagist_themes as $theme => $version) {
-                echo WP_CLI::colorize('     │    ' . $this->divider($wpackagist_themes, $theme) . ' %g' . $theme . ' %b(' . $version . ')%n');
+            foreach ($wp_packages_themes as $theme => $version) {
+                echo WP_CLI::colorize('     │    ' . $this->divider($wp_packages_themes, $theme) . ' %g' . $theme . ' %b(' . $version . ')%n');
                 WP_CLI::line('');
             }
         }
@@ -187,7 +187,7 @@ class CLI
         WP_CLI::line('');
         WP_CLI::line('');
         WP_CLI::log('Generating Composer and Git commands...');
-        $cmd = Utils::generateCommands($wpackagist_plugins, $other_plugins, $wpackagist_themes, $other_themes, $mu_plugins);
+        $cmd = Utils::generateCommands($wp_packages_plugins, $other_plugins, $wp_packages_themes, $other_themes, $mu_plugins);
         WP_CLI::line('');
         WP_CLI::line('');
 

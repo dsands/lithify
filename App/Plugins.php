@@ -41,21 +41,21 @@ class Plugins
     }
 
     /**
-     * Get the plugins that are available on wpackagist
+     * Get the plugins that are available on WP Packages
      */
-    public static function getWpackagistPlugins($plugins)
+    public static function getWpPackagesPlugins($plugins)
     {
-        $wpackagist_plugins = [];
+        $wp_packages_plugins = [];
         foreach ($plugins as $plugin => $version) {
             if (self::pluginExists($plugin)) {
-                $wpackagist_plugins[$plugin] = $version;
+                $wp_packages_plugins[$plugin] = $version;
             }
         }
-        return $wpackagist_plugins;
+        return $wp_packages_plugins;
     }
 
     /**
-     * Get the plugins that are not available on wpackagist
+     * Get the plugins that are not available on WP Packages
      */
     public static function getOtherPlugins($plugins)
     {

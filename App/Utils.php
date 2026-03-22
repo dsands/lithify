@@ -12,14 +12,14 @@ class Utils
     /**
      * Generate the complete series of Git and Composer commands
      */
-    public static function generateCommands($wpackagist_plugins, $other_plugins, $wpackagist_themes, $other_themes, $mu_plugins)
+    public static function generateCommands($wp_packages_plugins, $other_plugins, $wp_packages_themes, $other_themes, $mu_plugins)
     {
         $cmd = '';
 
         // Generate a composer.json require line for each plugin at its current version
         $cmd .= 'composer require';
-        foreach ($wpackagist_plugins as $plugin => $version) {
-            $cmd .= ' wpackagist-plugin/' . $plugin . ':^' . $version;
+        foreach ($wp_packages_plugins as $plugin => $version) {
+            $cmd .= ' wp-plugin/' . $plugin . ':^' . $version;
         }
 
         // Generate a git command to add each $other_plugin to the project
@@ -29,8 +29,8 @@ class Utils
 
         // Generate a composer.json require line for each theme at its current version
         $cmd .= ' && composer require';
-        foreach ($wpackagist_themes as $theme => $version) {
-            $cmd .= ' wpackagist-theme/' . $theme . ':' . $version;
+        foreach ($wp_packages_themes as $theme => $version) {
+            $cmd .= ' wp-theme/' . $theme . ':' . $version;
         }
 
         // Generate a git command to add each $other_theme to the project

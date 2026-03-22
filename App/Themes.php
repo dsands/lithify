@@ -41,21 +41,21 @@ class Themes
     }
 
     /**
-     * Get the themes that are available on wpackagist
+     * Get the themes that are available on WP Packages
      */
-    public static function getWpackagistThemes($themes)
+    public static function getWpPackagesThemes($themes)
     {
-        $wpackagist_themes = [];
+        $wp_packages_themes = [];
         foreach ($themes as $theme => $version) {
             if (self::themeExists($theme)) {
-                $wpackagist_themes[$theme] = $version;
+                $wp_packages_themes[$theme] = $version;
             }
         }
-        return $wpackagist_themes;
+        return $wp_packages_themes;
     }
 
     /**
-     * Get the themes that are not available on wpackagist
+     * Get the themes that are not available on WP Packages
      */
     public static function getOtherThemes($themes)
     {
