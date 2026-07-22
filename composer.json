@@ -15,5 +15,8 @@
   },
   "autoload": {
     "psr-4": { "FAlves97\\Lithify\\": "src/" }
+  },
+  "replace": {
+    "mwdelaney/lithify": "*"
   }
 }
