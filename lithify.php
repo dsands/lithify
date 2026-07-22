@@ -10,7 +10,7 @@
  * @package Lithify
  */
 
-namespace MWDelaney\Lithify;
+namespace FAlves97\Lithify;
 
 // Exit if accessed directly.
 if (! defined('ABSPATH')) {
