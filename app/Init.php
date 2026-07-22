@@ -1,5 +1,5 @@
 <?php
-namespace FAlves97\Lithify;
+namespace MWDelaney\Lithify;
 
 // Exit if accessed directly.
 if (! defined('ABSPATH')) {

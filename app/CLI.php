@@ -1,5 +1,5 @@
 <?php
-namespace FAlves97\Lithify;
+namespace MWDelaney\Lithify;
 
 use WP_CLI;
 use WP_CLI_Command;
