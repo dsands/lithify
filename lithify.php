@@ -17,8 +17,5 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-// Require Composer autoloader if it exists.
-require __DIR__ . '/vendor/autoload.php';
-
 // Initialize the plugin
 $lithify = new Init();
