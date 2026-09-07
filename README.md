@@ -35,7 +35,8 @@ This fork simply removes the requirement for wp-cli so as to avoid collisions wi
 6. Add Lithify as a dependency to Bedrock:
 
     ```bash
-    $ composer require mwdelaney/lithify
+    $ composer config repositories.lithify vcs https://github.com/dsands/lithify.git
+    $ composer require dsands/lithify:dev-main
     ```
 
 7. SSH to your development server and navigate to the Bedrock directory:
