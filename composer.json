@@ -13,6 +13,6 @@
     "php": ">=7.4"
   },
   "autoload": {
-    "psr-4": { "DSands\\Lithify\\": "app/" }
+    "psr-4": { "MWDelaney\\Lithify\\": "app/" }
   }
 }
