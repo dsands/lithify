@@ -1,11 +1,11 @@
 {
-  "name": "mwdelaney/lithify",
+  "name": "dsands/lithify",
   "description": "Lithify is a WordPress plugin generates a composer `require` command to assist in converting a traditional WordPress website into a Roots/Bedrock website.",
   "keywords": ["Bedrock", "Composer", "Trellis"],
   "license": "MIT",
   "authors": [
     {
-      "name": "Michael W. Delaney"
+      "name": "David Sands"
     }
   ],
   "type": "wordpress-plugin",
@@ -13,6 +13,6 @@
     "php": ">=7.4",
   },
   "autoload": {
-    "psr-4": { "MWDelaney\\Lithify\\": "app/" }
+    "psr-4": { "DSands\\Lithify\\": "app/" }
   }
 }
