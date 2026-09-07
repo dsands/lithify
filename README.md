@@ -2,6 +2,8 @@
 
 Lithify is a WordPress plugin that adds a WP-CLI command to convert a traditional WordPress site into a Bedrock-style WordPress installation.
 
+This fork simply removes the requirement for wp-cli so as to avoid collisions with a globally installed wp-cli.
+
 ## Installation and Usage
 
 1. Create a new Trellis site and initialize a new Git repository:
